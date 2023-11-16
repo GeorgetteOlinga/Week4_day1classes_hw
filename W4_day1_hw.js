@@ -56,26 +56,76 @@ class Person{
         this.mood--
         this.bankAccount += 10
     }
-    buyHamster(hamster) {
-        this.hamsters.push(hamster)
+    buyHamster(Hamster) {
+        this.hamsters.push(Hamster)
         this.mood += 10
-        this.bankAccount -= hamster.getPrice()
+        this.bankAccount -= Hamster.getPrice()
     }
 }
-let timmy = new Person("Timmy")
-timmy.ageUp()
-timmy.ageUp()
-timmy.ageUp()
-timmy.ageUp()
-timmy.ageUp()
+
+
+const timmy = new Person ("Timmy");
+for (let i= 0; i <5; i++) {
+  timmy.ageUp()
+}
+
+for (let i= 0; i <5; i++) {
+    timmy.eat()
+}
+
+for (let i= 0; i <5; i++) {
+    timmy.exercise()
+}
+
+for (let i= 0; i <9; i++) {
+    timmy.ageUp()
+}
+
+const gus = new Hamster('Gus')
+gus.owner = 'Timmy'
+timmy.buyHamster(gus)
+console.log(timmy)
+
+for(let i =0; i < 15; i++){
+  timmy.ageUp()
+}
 timmy.eat()
 timmy.eat()
-timmy.eat()
-timmy.eat()
-timmy.eat()
-timmy.exercise()
-timmy.exercise()
-timmy.exercise()
 timmy.exercise()
 timmy.exercise()
 
+const Gus = new Hamster("Gus");
+Hamster.owner = "Timmy";
+timmy.buyHamster(Gus);
+console.log(timmy);
+
+// chef Make Dinner
+
+ class Dinner {
+   constructor (appetizer, entree,dessert){
+     this.appetizer = appetizer;
+     this.entree = entree ;
+     this.dessert = dessert;
+   }
+
+  }
+
+  class Chef {
+    
+constructor (name){
+    this.name = name
+}
+ makeDinner (appetizer, entree, dessert){
+    const newdinner = new Dinner(appetizer, entree, dessert)
+    return newdinner
+ }
+  }
+const georgette = new Chef("georgette")
+const dinner1 = georgette.makeDinner("soup", "shrimp","chocolate Cake")
+console.log(dinner1)
+
+const dinner2 = georgette.makeDinner("salad", "tilapia fillet","creme glace")
+console.log(dinner2)
+
+const dinner3 = georgette.makeDinner("onion ring", "steak","capuccino")
+console.log(dinner3)
